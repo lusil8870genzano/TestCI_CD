@@ -1,16 +1,9 @@
-pipeline {
-    agent {
-        docker {
-            image 'maven:3.9.4-eclipse-temurin-17-alpine' 
-            args '-v /root/.m2:/root/.m2' 
-        }
-    }
-    stages {
+pipeline { 
+    agent any  
+    stages { 
         stage('Build') { 
-            steps {
-		dir('C:\TUTORIALS\JENKINS\EXAMPLES\TestCI_CD.git\spmia-chapter3-master') {
-      			sh 'mvn -B -DskipTests clean package' 
-    		}		
+            steps { 
+               echo 'This is a minimal pipeline.' 
             }
         }
     }
