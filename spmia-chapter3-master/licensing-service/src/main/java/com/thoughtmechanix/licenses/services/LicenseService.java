@@ -29,9 +29,7 @@ public class LicenseService {
 
     public void saveLicense(License license){
         license.withId( UUID.randomUUID().toString());
-
         licenseRepository.save(license);
-
     }
 
     public void updateLicense(License license){
