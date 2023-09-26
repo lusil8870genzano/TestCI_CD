@@ -15,7 +15,7 @@ pipeline {
             steps { 
                	echo 'Build all modules with maven...'
 		dir('C:/TUTORIALS/JENKINS/EXAMPLES/TestCI_CD.git/spmia-chapter3-master') { // or absolute path
-      			sh 'mvn clean install'
+      			bat 'mvn clean install'
     		}		 
             }
         }
