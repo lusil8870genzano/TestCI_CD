@@ -1,28 +1,10 @@
-pipeline {
-  agent {
-    node {
-      label 'build'
-    }
-
-  }
-  stages {
-    stage('build-stage') {
-      agent {
-        node {
-          label 'build'
+pipeline { 
+    agent any  
+    stages { 
+        stage('Build') { 
+            steps { 
+               echo 'This is a minimal pipeline.' 
+            }
         }
-
-      }
-      environment {
-        dir = 'C:\\TUTORIALS\\JENKINS\\EXAMPLES\\TestCI_CD.git'
-      }
-      steps {
-        echo 'prova'
-      }
     }
-
-  }
-  environment {
-    dir = 'C:\\TUTORIALS\\JENKINS\\EXAMPLES\\TestCI_CD.git\\spmia-chapter3-master'
-  }
 }
