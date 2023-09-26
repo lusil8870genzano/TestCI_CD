@@ -13,7 +13,8 @@ pipeline {
         }
         stage('Build') { 
             steps { 
-               echo 'This is a minimal pipeline.' 
+               	echo 'Build all modules with maven...'
+		sh 'mvn -f C:\TUTORIALS\JENKINS\EXAMPLES\TestCI_CD.git\spmia-chapter3-master clean install' 
             }
         }
     }
