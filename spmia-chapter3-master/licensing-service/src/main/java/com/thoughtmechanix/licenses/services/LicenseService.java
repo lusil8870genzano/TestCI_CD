@@ -18,6 +18,10 @@ public class LicenseService {
     @Autowired
     ServiceConfig config;
 
+    public List<License> getAllLicenses() {
+        return  licenseRepository.findAll();
+    }
+
     public License getLicense(String organizationId,String licenseId) {
         License license = licenseRepository.findByOrganizationIdAndLicenseId(organizationId, licenseId);
         return license.withComment(config.getExampleProperty());
