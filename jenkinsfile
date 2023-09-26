@@ -14,7 +14,9 @@ pipeline {
         stage('Build') { 
             steps { 
                	echo 'Build all modules with maven...'
-		sh 'mvn -f C:/TUTORIALS/JENKINS/EXAMPLES/TestCI_CD.git/spmia-chapter3-master clean install' 
+		dir('C:/TUTORIALS/JENKINS/EXAMPLES/TestCI_CD.git/spmia-chapter3-master') { // or absolute path
+      			sh 'mvn clean install'
+    		}		 
             }
         }
     }
