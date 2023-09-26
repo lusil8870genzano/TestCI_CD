@@ -18,6 +18,9 @@ public class LicenseService {
     @Autowired
     ServiceConfig config;
 
+    /**
+     * Restituisce il set di tutti i licenses
+     * */
     public List<License> getAllLicenses() {
         return  licenseRepository.findAll();
     }
