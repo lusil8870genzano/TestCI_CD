@@ -23,7 +23,8 @@ public class LicenseService {
     ServiceConfig config;
 
     /**
-     * Restituisce il set di tutti i licenses
+     * Restituisce il set di tutti i licenses.
+     * Molto utile come operatività.
      * */
     public List<License> getAllLicenses() {
         return  licenseRepository.findAll();
