@@ -27,6 +27,7 @@ public class LicenseService {
      * Molto utile come operatività.
      * Ancora aggiornamenti alla release..
      * Aggiornamenti...
+     * Ancora aggiornamenti..
      * */
     public List<License> getAllLicenses() {
         return  licenseRepository.findAll();
