@@ -1,6 +1,6 @@
 pipeline { 
     agent {
-        label 'Maven 3.8.5'
+        label 'master'
     }
     tools {
         maven 'Maven 3.8.5'
