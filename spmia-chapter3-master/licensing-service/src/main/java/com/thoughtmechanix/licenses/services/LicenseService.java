@@ -9,6 +9,9 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * Servizio di esempio per testare Jenkins
+ * */
 @Service
 public class LicenseService {
 
