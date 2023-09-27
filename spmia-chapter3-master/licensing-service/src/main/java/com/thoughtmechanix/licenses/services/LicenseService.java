@@ -11,6 +11,7 @@ import java.util.UUID;
 
 /**
  * Servizio di esempio per testare Jenkins
+ * Altro commento...
  * */
 @Service
 public class LicenseService {
