@@ -28,6 +28,7 @@ public class LicenseService {
      * Ancora aggiornamenti alla release..
      * Aggiornamenti...
      * Ancora aggiornamenti..
+     * Ancora prove
      * */
     public List<License> getAllLicenses() {
         return  licenseRepository.findAll();
