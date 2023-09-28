@@ -1,0 +1,4 @@
+my:
+  greeting: I AM IN THE DEFAULT
+server:
+  port: 8094
