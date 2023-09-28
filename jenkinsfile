@@ -1,13 +1,17 @@
 pipeline { 
-    agent {
-        label 'master'
-    }
+    agent any
+    //agent {
+    //    label 'master'
+    //}
     tools {
         maven 'Maven 3.8.5'
         jdk 'JDK 1.8'
     }  
     stages { 
 	stage ('Initialize') {
+	    agent {
+                label 'master'
+            }
             steps {
                 echo "PATH = ${PATH}"
                 echo "M2_HOME = ${M2_HOME}"
@@ -15,6 +19,9 @@ pipeline {
             }
         }
         stage('Build') { 
+	    agent {
+                label 'master'
+            }
             steps { 
                	echo 'Build all modules with maven...'
 		dir('C:/TUTORIALS/JENKINS/EXAMPLES/TestCI_CD.git/spmia-chapter3-master') { // or absolute path
@@ -23,11 +30,14 @@ pipeline {
             }
         }
 	stage('Deploy') {
+		agent {
+                	label 'master'
+            	}
 		when {
 			expression {
 				currentBuild.result == null || currentBuild.result == 'SUCCESS'
 			}
-		}
+		}		
 		steps {
 			echo "effettua il deploy con docker"
 		}
@@ -35,7 +45,7 @@ pipeline {
 	stage('Test_Docker') {
             agent {
                 docker {
-                    image 'docker-label'
+                    image 'openjdk:8-jdk-alpine'
                     // Run the container on the node specified at the
                     // top-level of the Pipeline, in the same workspace,
                     // rather than on a new node entirely:
@@ -43,7 +53,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'gradle --version'
+                sh 'openjdk --version'
             }
         }
     }
