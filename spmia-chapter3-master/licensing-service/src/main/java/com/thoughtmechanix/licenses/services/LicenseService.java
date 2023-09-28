@@ -25,10 +25,6 @@ public class LicenseService {
     /**
      * Restituisce il set di tutti i licenses.
      * Molto utile come operatività.
-     * Ancora aggiornamenti alla release..
-     * Aggiornamenti...
-     * Ancora aggiornamenti..
-     * Ancora prove
      * */
     public List<License> getAllLicenses() {
         return  licenseRepository.findAll();
