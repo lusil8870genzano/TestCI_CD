@@ -17,7 +17,7 @@ services:
   licensingservice:
     image: johncarnell/tmx-licensing-service:chapter3
     ports:
-      - "8080:8080"
+      - "8094:8094"
     environment:
       PROFILE: "default"
       CONFIGSERVER_URI: "http://configserver:8888"
