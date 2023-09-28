@@ -21,5 +21,15 @@ pipeline {
     		}		 
             }
         }
+	stage('Deploy') {
+		when {
+			expression {
+				currentBuild.result == null || currentBuild.result == 'SUCCESS' ①
+			}
+		}
+		steps {
+			echo "effettua il deploy con docker"
+		}
+	}
     }
 }
