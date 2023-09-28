@@ -53,7 +53,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'openjdk --version'
+                bat 'openjdk --version'
             }
         }
     }
